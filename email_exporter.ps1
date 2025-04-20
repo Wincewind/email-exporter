@@ -78,7 +78,7 @@ $lblFormat.Location = New-Object System.Drawing.Point(30,120)
 $form.Controls.Add($lblFormat)
 
 $comboFormat = New-Object System.Windows.Forms.ComboBox
-$comboFormat.Items.Add("EML")
+$comboFormat.Items.Add("MHT")
 $comboFormat.Items.Add("PDF")
 $comboFormat.SelectedIndex = 0
 $comboFormat.Location = New-Object System.Drawing.Point(230,120)
@@ -157,7 +157,7 @@ $btnStart.Add_Click({
                 continue
             }
 
-            if ($format -eq "EML") {
+            if ($format -eq "MHT") {
                 $mail.SaveAs($fullPath, 9) # 9 = olRFC822
             } elseif ($format -eq "PDF") {
                 $tempMht = Join-Path $env:TEMP "$filename.mht"
